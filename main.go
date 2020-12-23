@@ -39,7 +39,6 @@ func HandleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (
 	sess := session.Must(session.NewSessionWithOptions(session.Options{
 		SharedConfigState: session.SharedConfigEnable,
 	}))
-
 	// Create DynamoDB client
 	svc := dynamodb.New(sess)
 
@@ -65,6 +64,7 @@ func HandleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (
 			},
 		},
 	})
+	fmt.Println("5")
 	if err != nil {
 		return events.APIGatewayProxyResponse{
 			StatusCode: 411,

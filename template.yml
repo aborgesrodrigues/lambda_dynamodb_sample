@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: Simple Sample.
+
+Resources:
+  GoLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: go1.x
+      Handler: main
+      Timeout: 10
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /go-lambda
+            Method: post
