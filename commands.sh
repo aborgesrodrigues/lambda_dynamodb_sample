@@ -7,6 +7,10 @@ sam build
 # call lambda function
 sam local invoke "GoLambda" -e input.json
 
+# set aws profile when calling lambda function
+sam local invoke "GoLambda" -e input.json --profile pessoal
+
+
 # start api for the local lambda function
 sam local start-api
 
